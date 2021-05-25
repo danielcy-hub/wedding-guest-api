@@ -22,7 +22,7 @@ export class Attendance {
   @Column('smallint',{name:"person_qty"})
   person_qty: number;
 
-  @OneToOne(()=>Guest,(guest)=>guest.attendance)
+  @OneToOne(()=>Guest,(guest)=>guest.attendance,{onDelete:'CASCADE'})
   @JoinColumn([{name:'guest_id', referencedColumnName:'id'}])
   guest: Guest;
 }

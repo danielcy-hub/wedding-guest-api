@@ -10,10 +10,10 @@ export const dbConfig = {
   username: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
-  entities: ['dist/model/**/*.js'],
+  entities: ['dist/entities/**/*.js'],
   migrations: ['dist/migrations/**/*.js'],
   cli: {
-    entitiesDir: 'model',
+    entitiesDir: 'entities',
     migrationsDir: 'migration'
   },
   migrationsRun: false,

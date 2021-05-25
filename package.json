@@ -8,6 +8,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "lint": "eslint . --ext .ts",
+    "typeorm": "ts-node ./node_modules/typeorm/cli -f ./src/config/ormconfig.ts",
     "test": "\"\\\"echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1\\\"\""
   },
   "repository": {

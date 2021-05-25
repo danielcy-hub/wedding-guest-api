@@ -1,4 +1,5 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
+import { Attendance } from './attendance';
 
 @Index('_guest_id_index', ['id'], { unique: true })
 @Entity('guest', { schema: 'public' })
@@ -15,6 +16,9 @@ export class Guest {
   @Column('character', { name: 'guest_of', length: 1 })
   guest_of: string;
 
-  @Column('integer', { name: 'person_qty' })
+  @Column('smallint', { name: 'person_qty' })
   person_qty: number;
+
+  @OneToOne(()=>Attendance,(attendance)=>attendance.guest)
+  attendance:Attendance;
 }

@@ -1,12 +1,11 @@
-import express from 'express';
+import App from './app';
 import { createConnection } from 'typeorm';
 import { dbConfig, appPort } from './config';
-
-const app = express();
+import controllers from './controllers';
 
 createConnection(dbConfig)
   .then(async () => {
-    app.listen(appPort, '0.0.0.0');
-    console.log('Server run on port', appPort);
+    const app = new App(controllers, appPort);
+    app.listen();
   })
-  .catch((error) => console.log(error));
+  .catch((error) => console.log('Error while connecting to the database', error));

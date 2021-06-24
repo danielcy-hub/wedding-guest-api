@@ -27,6 +27,9 @@ class GuessController implements Controller {
   }
 
   private createGuess = function (request: express.Request, response: express.Response) {
+    /*new Promise <Guess.Default> ((resolve,reject)=> {
+      if (!request.body) reject
+    })*/
     response.send('create');
   }
 

@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import { GlobalTypes } from './interfaces';
+import { errorHandler, urlNotFound } from './middlewares/error-handler';
 
 type Controller = GlobalTypes.Controller;
 
@@ -15,6 +16,7 @@ class App {
 
     this.initializeMiddlewares();
     this.initializeControllers(controllers);
+    this.initializeErrorHandlers();
   }
   
   private initializeMiddlewares() {
@@ -28,6 +30,11 @@ class App {
     controllers.forEach((controller)=>{
       this.app.use('/',controller.router);
     });
+  }
+
+  private initializeErrorHandlers() {
+    this.app.use(urlNotFound);
+    this.app.use(errorHandler);
   }
 
   public listen():void {

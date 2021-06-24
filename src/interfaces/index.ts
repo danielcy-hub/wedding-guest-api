@@ -1,5 +1,7 @@
 import * as GlobalTypes from './global';
+import * as Guess from './guess';
 
 export {
-  GlobalTypes
+  GlobalTypes,
+  Guess
 }

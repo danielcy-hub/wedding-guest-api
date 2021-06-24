@@ -1,5 +1,6 @@
 import * as express from 'express';
 import { GlobalTypes } from '../interfaces';
+import AttendanceException from '../exceptions/attendance';
 
 type Controller = GlobalTypes.Controller;
 
@@ -18,8 +19,10 @@ class AttendanceController implements Controller {
     this.router.delete(this.path, this.deleteAttendance);
   }
 
-  private getAllAttendance = function (request: express.Request, response: express.Response) {
-    response.send('getall');
+  private getAllAttendance = function (request: express.Request, response: express.Response, next:express.NextFunction) {
+    const language = request.headers['accept-language'];
+    next(new AttendanceException(500,'INTERNAL-SERVER-ERROR',language))
+    //response.send('getall');
   }
 
   private updateAttendance = function (request: express.Request, response: express.Response) {

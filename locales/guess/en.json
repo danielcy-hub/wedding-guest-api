@@ -1,0 +1,14 @@
+{
+	"NO-REQUEST-BODY": "Please fill all required field! Thank you",
+	"INVALID-ID-UPDATE": "Invalid ID for update. Please try again!",
+	"INVALID-ID-DELETE": "ID must be an array of number. Please try again!",
+	"INVALID-NAME": "Invalid guess name. Guess name must be a string and not null",
+	"INVALID-ADDRESS": "Invalid guess address. Guess address must be a string and not null",
+	"INVALID-PERSON-QTY": "Invalid person quantity. Person quantity must be a number more than 0 and not null",
+	"INVALID-SORT-COL": "Sort Col parameter is invalid",
+	"INVALID-SORT-ORDER": "Sort Order parameter is invalid",
+	"INVALID-PAGE": "Page parameter is invalid",
+	"INVALID-SIZE": "Size parameter is invalid",
+	"INTERNAL-SERVER-ERROR": "Server error occured. Please try again!",
+	"SelectQueryBuilder.addOrderBy \"order\" can accept only \"ASC\" and \"DESC\" values.": "SelectQueryBuilder.addOrderBy \"order\" can accept only \"ASC\" and \"DESC\" values."
+}

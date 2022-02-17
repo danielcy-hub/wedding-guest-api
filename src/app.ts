@@ -39,7 +39,7 @@ class App {
 
   public listen():void {
     this.app.listen(this.port, '0.0.0.0', ()=>{
-      console.log(`App listening on port ${this.port}`);
+      console.log('App listening on port', this.port);
     });
   }
 

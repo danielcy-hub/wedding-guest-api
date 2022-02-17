@@ -16,5 +16,6 @@ export const errorHandler = function (
 ): void {
   const status = error.status;
   const message = error.message;
+  console.log({status,message})
   response.status(status).send({ status, message });
 };
